@@ -4,12 +4,12 @@
 @tailwind utilities;
 @font-face {
   font-family: "letter";
-  src: url("Merchant_Copy.ttf") format("truetype");
+  src: url("/src/assets/fonts/Merchant_Copy.ttf") format("truetype");
 }
 
 
 :root {
- font-family: letter,Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+ font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
  
  line-height: 1.5; 
   font-weight: 400; 
