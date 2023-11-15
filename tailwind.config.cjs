@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'caveat': ['"Caveat"', "cursive"]
+        'letter': ['"Merchant_Copy"']
       },
       animation: {
         'bounce-slow': 'bounce 3s linear infinite',
