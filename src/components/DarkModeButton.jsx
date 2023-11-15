@@ -1,4 +1,4 @@
-import useDarkMode from 'hooks/useDarkMode';
+import useDarkMode from '../hooks/useDarkMode';
 import React, { useState } from 'react';
 
 const DarkModeButton = () => {
@@ -6,8 +6,6 @@ const DarkModeButton = () => {
    const [dark, setDark] = useState(colorTheme === 'light' ? true : false);
 
    const toggleDarkMode = () => {
-      alert(dark);
-      alert(colorTheme);
       setTheme(colorTheme);
       setDark(!dark);
    };
