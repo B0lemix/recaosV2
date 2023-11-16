@@ -3,10 +3,11 @@ import { FaRegTrashAlt, FaRegEdit } from 'react-icons/fa';
 
 const List = ({ dataList, toggleComplete, deleteToDo, editToDo, inputElement }) => {
    const style = {
-      li: "flex justify-between  p-4 my-2 capitalize text-3xl font-['letter'] uppercase",
-      liCompleted: "flex justify-between  p-4 my-2 capitalize text-2xl font-['letter'] uppercase",
-      row: 'flex group',
-      text: ' mx-8 cursor-pointer transform  transition duration-500 hover:scale-110 ',
+      li: "flex justify-between    mx-2 my-4 capitalize  text-xl md:text-3xl font-['letter'] uppercase",
+      liCompleted:
+         "flex justify-between my-1 capitalize  text-lg md:text-2xl  font-['letter'] uppercase",
+      row: 'flex group  ',
+      text: ' mx-8 cursor-pointer break-all transform  transition duration-500 hover:scale-110  ',
       textCompleted:
          'ml-2 cursor-pointer  transition-all text-2xl decoration-red-500/60 decoration-2 duration-500 ease-out',
       button: ' cursor-pointer flex items-center',
@@ -27,7 +28,7 @@ const List = ({ dataList, toggleComplete, deleteToDo, editToDo, inputElement }) 
                {dataList.text}
             </p>
          </div>
-         <div className="flex gap-10 mr-10 text-xl">
+         <div className="flex gap-6 mr-10 text-xl">
             <button
                onClick={() => {
                   editToDo(dataList);
