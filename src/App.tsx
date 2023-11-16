@@ -18,7 +18,7 @@ const style = {
    bg: ' w-full h-screen p-4 bg-slate-200 dark:bg-neutral-800 ',
    img: 'object-cover h-36 w-full rounded-lg  ',
    container:
-      "bg-[url('/bg-paper.jpg')] bg-center bg-[length:500px]    max-w-[500px] w- m-auto rounded-md shadow-2xl p-4 font-semibold",
+      "bg-[url('/bg-paper.jpg')] bg-center bg-[length:500px]  max-w-[500px] min-w-[450px]  m-auto rounded-md shadow-2xl p-4 font-semibold",
    heading: 'text-3xl font-bold text-center  text-gray-800 ',
    form: 'flex mb-2 justify-between ',
    input: 'border p-2 w-full text-xl shadow-md',
