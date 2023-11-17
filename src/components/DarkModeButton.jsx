@@ -11,15 +11,15 @@ const DarkModeButton = () => {
    };
 
    return (
-       <div className=''>
-                    <button
+      <div>
+         <button
             id="theme-toggle"
             type="button"
-            className="rounded-lg p-2.5  text-black hover:bg-gray-100  font-['letter'] focus:outline-none focus:ring-4 focus:ring-gray-200  flex flex-row items-center gap-2"
+            className="rounded-lg p-2.5  text-black hover:scale-125 transition-all duration-300 ease-in-out  font-['letter']   flex flex-row items-center gap-2"
             onClick={toggleDarkMode}
          >
-         {!dark ? (
-   
+            {/*   className="rounded-lg p-2.5  text-black hover:bg-gray-100  font-['letter'] focus:outline-none focus:ring-4 focus:ring-gray-200  flex flex-row items-center gap-2" */}
+            {!dark ? (
                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="icon icon-tabler icon-tabler-moon  "
@@ -35,9 +35,7 @@ const DarkModeButton = () => {
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
                </svg>
-         
-         ) : (
-           
+            ) : (
                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="icon icon-tabler icon-tabler-sun-filled"
@@ -97,14 +95,12 @@ const DarkModeButton = () => {
                      fill="currentColor"
                   />
                </svg>
-                  
-            
-           )}
-           <div className='flex flex-col items-center text-lg'>
+            )}
+            <div className="flex flex-col items-center text-lg md:text-xl">
                <span>Modo</span>
-                   <span>{dark ? 'Claro' : 'Oscuro' }</span>    
-           </div>
-           </button>
+               <span>{dark ? 'Claro' : 'Oscuro'}</span>
+            </div>
+         </button>
       </div>
    );
 };

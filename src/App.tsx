@@ -14,20 +14,28 @@ import {
 } from 'firebase/firestore';
 import DarkModeButton from 'components/DarkModeButton';
 
-/* max-w-[500px] min-w-[450px]  */
+/* max-w-[500px] min-w-[450px]  
 
-const style = {
-   bg: ' w-full h-screen p-4 bg-slate-200 dark:bg-neutral-800 ',
-   img: 'object-cover h-36 w-full rounded-lg  ',
-   container:
-      "bg-[url('/bg-paper.jpg')] bg-center bg-[length:500px] lg:max-w-[500px] max-w-[500px] m-auto rounded-md shadow-2xl p-4 font-semibold",
-   heading: 'text-3xl font-bold text-center  text-gray-800 ',
-   form: 'flex mb-2 justify-between ',
-   input: 'border p-2 w-full text-xl shadow-md',
-   button: 'border p-4 ml-2 bg-[#776b53] text-slate-100 hover:bg-[#8a8a72]',
+
    buttonOrder:
       'flex flex-row gap-4 items-center border p-2 ml-2 bg-[#776b53] text-slate-100 hover:bg-[#8a8a72]',
-   count: "text-center p-2 mb-2 flex justify-center items-center text-3xl  font-['letter']",
+
+      
+*/
+
+const style = {
+   bg: ' w-full h-full p-4 bg-slate-200 dark:bg-neutral-800 ',
+   img: 'object-cover h-36 w-full rounded-lg  ',
+   container:
+      "bg-[url('/bg-paper.jpg')] bg-center bg-[length:500px] lg:max-w-[500px] max-w-[500px] m-auto rounded-md shadow-2xl p-4 ",
+   heading: 'text-3xl font-bold text-center  text-gray-800 ',
+   form: 'flex mb-2 justify-between ',
+   input: "p-4 w-full text-3xl text-black font-bold outline-0  font-['letter'] border-b-2 border-slate-500 bg-transparent placeholder-gray-600 font-thin caret-black",
+   button:
+      "border p-4 ml-2 font-['letter'] text-black border-0 font-bold hover:scale-125 transition-all duration-300 easy-in-out",
+   buttonOrder:
+      "flex flex-row gap-4 items-center border p-2 ml-2  text-black font-['letter']  hover:scale-125 transition-all duration-300 ease-in-out text-lg md:text-2xl",
+   count: "text-center p-2 mb-2 flex justify-center items-center text-3xl  font-['letter'] ",
    actions: 'flex flex-row justify-between mx-8',
 };
 
@@ -173,7 +181,7 @@ function App() {
                   placeholder="Añadir recao"
                />
                <button className={style.button}>
-                  <AiOutlinePlus size={30} />
+                  <AiOutlinePlus size={35} />
                </button>
             </form>
 

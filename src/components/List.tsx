@@ -3,11 +3,11 @@ import { FaRegTrashAlt, FaRegEdit } from 'react-icons/fa';
 
 const List = ({ dataList, toggleComplete, deleteToDo, editToDo, inputElement }) => {
    const style = {
-      li: "flex justify-between    mx-2 my-4 capitalize  text-xl md:text-3xl font-['letter'] uppercase",
+      li: "flex justify-between    mx-2 my-4 capitalize  text-xl md:text-3xl font-['letter'] uppercase ",
       liCompleted:
          "flex justify-between my-1 capitalize  text-lg md:text-2xl  font-['letter'] uppercase",
       row: 'flex group  ',
-      text: ' mx-8 cursor-pointer break-all transform  transition duration-500 hover:scale-110  ',
+      text: ' mx-8 cursor-pointer break-all transform  transition duration-500 hover:scale-110 font-thin  ',
       textCompleted:
          'ml-2 cursor-pointer  transition-all text-2xl decoration-red-500/60 decoration-2 duration-500 ease-out',
       button: ' cursor-pointer flex items-center',
