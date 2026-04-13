@@ -7,6 +7,7 @@ export interface List {
 
 export const CATEGORIES = [
    { id: 'frutas',    label: 'Frutas',     emoji: '🍎', border: 'border-l-red-400',    badge: 'bg-red-50 text-red-600',      pill: 'bg-red-500'    },
+   { id: 'pasta',    label: 'Pasta',      emoji: '🍝', border: 'border-l-amber-500',    badge: 'bg-amber-50 text-amber-600',  pill: 'bg-amber-500'    },
    { id: 'verduras',  label: 'Verduras',   emoji: '🥦', border: 'border-l-green-500',  badge: 'bg-green-50 text-green-700',  pill: 'bg-green-500'  },
    { id: 'carnes',    label: 'Carnes',     emoji: '🥩', border: 'border-l-rose-500',   badge: 'bg-rose-50 text-rose-700',    pill: 'bg-rose-500'   },
    { id: 'pescado',   label: 'Pescado',    emoji: '🐟', border: 'border-l-blue-400',   badge: 'bg-blue-50 text-blue-700',    pill: 'bg-blue-500'   },
