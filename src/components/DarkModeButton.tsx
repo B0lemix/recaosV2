@@ -3,8 +3,8 @@ import useDarkMode from '../hooks/useDarkMode';
 const MoonIcon = () => (
    <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       strokeWidth="2"
       stroke="currentColor"
@@ -20,8 +20,8 @@ const MoonIcon = () => (
 const SunIcon = () => (
    <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="28"
-      height="28"
+      width="26"
+      height="26"
       viewBox="0 0 24 24"
       strokeWidth="2"
       stroke="currentColor"
@@ -35,24 +35,22 @@ const SunIcon = () => (
    </svg>
 );
 
-const DarkModeButton = () => {
-   const [theme, toggleTheme] = useDarkMode();
+export default function DarkModeButton() {
+   const [theme, toggleTheme] = useDarkMode() as [string, () => void];
    const isDark = theme === 'dark';
 
    return (
       <button
          type="button"
          onClick={toggleTheme}
-         className="rounded-lg p-2.5 text-black hover:scale-125 transition-all duration-300 ease-in-out font-['letter'] flex flex-row items-center gap-2"
+         className="rounded-lg p-2 text-black hover:scale-125 transition-all duration-300 ease-in-out font-['letter'] flex flex-row items-center gap-1.5"
          title={isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
       >
          {isDark ? <SunIcon /> : <MoonIcon />}
-         <div className="flex flex-col items-center text-lg md:text-xl leading-tight">
+         <div className="flex flex-col items-center text-base leading-tight">
             <span>Modo</span>
             <span>{isDark ? 'Claro' : 'Oscuro'}</span>
          </div>
       </button>
    );
-};
-
-export default DarkModeButton;
+}
