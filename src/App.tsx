@@ -55,6 +55,13 @@ interface TodoFormData {
 
 const LAST_LIST_KEY = 'recaos_last_list';
 
+/** Firestore rejects `undefined` values — strip them before any write */
+function clean<T extends object>(obj: T): Partial<T> {
+   return Object.fromEntries(
+      Object.entries(obj).filter(([, v]) => v !== undefined)
+   ) as Partial<T>;
+}
+
 export default function App() {
    // Theme
    const [theme, toggleTheme] = useDarkMode() as [string, () => void];
@@ -147,18 +154,16 @@ export default function App() {
 
    const handleAdd = useCallback(async (data: TodoFormData) => {
       if (!currentListId) return;
-      const ref = await addDoc(collection(db, 'lists', currentListId, 'todos'), {
-         ...data,
-         completed: false,
-         createdAt: Date.now(),
-      });
+      const ref = await addDoc(collection(db, 'lists', currentListId, 'todos'),
+         clean({ ...data, completed: false, createdAt: Date.now() }),
+      );
       await updateDoc(doc(db, 'lists', currentListId), { order: arrayUnion(ref.id) });
       setSheetOpen(false);
    }, [currentListId]);
 
    const handleUpdate = useCallback(async (data: TodoFormData) => {
       if (!currentListId || !editTodo) return;
-      await updateDoc(doc(db, 'lists', currentListId, 'todos', editTodo.id), { ...data });
+      await updateDoc(doc(db, 'lists', currentListId, 'todos', editTodo.id), clean({ ...data }));
       setEditTodo(null);
       setSheetOpen(false);
    }, [currentListId, editTodo]);
@@ -245,7 +250,7 @@ export default function App() {
       const now = Date.now();
       for (const item of newItems) {
          const ref = doc(collection(db, 'lists', currentListId, 'todos'));
-         batch.set(ref, { ...item, completed: false, createdAt: now });
+         batch.set(ref, clean({ ...item, completed: false, createdAt: now }));
          newIds.push(ref.id);
       }
       await batch.commit();
@@ -308,12 +313,13 @@ export default function App() {
       const now = Date.now();
       for (const item of newItems) {
          const ref = doc(collection(db, 'lists', currentListId, 'todos'));
-         batch.set(ref, { text: item.text, completed: false, createdAt: now,
-            ...(item.category && { category: item.category }),
-            ...(item.quantity !== undefined && { quantity: item.quantity }),
-            ...(item.unit && { unit: item.unit }),
-            ...(item.price !== undefined && { price: item.price }),
-         });
+         batch.set(ref, clean({ text: item.text, completed: false, createdAt: now,
+            category: item.category,
+            quantity: item.quantity,
+            unit: item.unit,
+            price: item.price,
+            notes: item.notes,
+         }));
          newIds.push(ref.id);
       }
       await batch.commit();
